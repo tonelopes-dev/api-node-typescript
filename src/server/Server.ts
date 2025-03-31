@@ -1,10 +1,9 @@
 import * as express from "express"
-import { Request, Response } from "express"
+import { router } from "./routes"
 
 const server = express()
 
-server.get("/", (req: Request, res: Response) => {
-  res.send("Hello World")
-})
+server.use(express.json())
+server.use(router)
 
 export { server }
